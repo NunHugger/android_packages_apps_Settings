@@ -35,7 +35,10 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+<<<<<<< HEAD:src/com/android/settings/notificationlight/LightSettingsDialog.java
+=======
 import android.widget.Button;
+>>>>>>> 90beee9... port colorpicker and add hex field to light dialog:src/com/android/settings/slim/notificationlight/LightSettingsDialog.java
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
@@ -43,11 +46,16 @@ import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 
 import com.android.settings.R;
+<<<<<<< HEAD:src/com/android/settings/notificationlight/LightSettingsDialog.java
 import com.android.settings.notificationlight.ColorPickerView.OnColorChangedListener;
+
 import java.util.ArrayList;
 import java.util.IllegalFormatException;
 import java.util.Locale;
+=======
+import com.android.settings.slim.notificationlight.ColorPickerView.OnColorChangedListener;
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
+>>>>>>> 90beee9... port colorpicker and add hex field to light dialog:src/com/android/settings/slim/notificationlight/LightSettingsDialog.java
 
 public class LightSettingsDialog extends AlertDialog implements
         ColorPickerView.OnColorChangedListener, TextWatcher, OnFocusChangeListener {
@@ -113,11 +121,19 @@ public class LightSettingsDialog extends AlertDialog implements
         View layout = mInflater.inflate(R.layout.dialog_light_settings, null);
 
         mColorPicker = (ColorPickerView) layout.findViewById(R.id.color_picker_view);
+<<<<<<< HEAD:src/com/android/settings/notificationlight/LightSettingsDialog.java
         mHexColorInput = (EditText) layout.findViewById(R.id.hex_color_input);
         mNewColor = (ColorPanelView) layout.findViewById(R.id.color_panel);
+=======
+        mOldColor = (ColorPanelView) layout.findViewById(R.id.old_color_panel);
+        mNewColor = (ColorPanelView) layout.findViewById(R.id.new_color_panel);
         mHex = (EditText) layout.findViewById(R.id.hex);
         mSetButton = (Button) layout.findViewById(R.id.enter);
 
+        ((LinearLayout) mOldColor.getParent()).setPadding(Math
+                .round(mColorPicker.getDrawingOffset()), 0, Math
+                .round(mColorPicker.getDrawingOffset()), 0);
+>>>>>>> 90beee9... port colorpicker and add hex field to light dialog:src/com/android/settings/slim/notificationlight/LightSettingsDialog.java
 
         mColorPicker.setOnColorChangedListener(this);
         mColorPicker.setColor(color, true);
@@ -191,11 +207,14 @@ public class LightSettingsDialog extends AlertDialog implements
         final int mask = hasAlpha ? 0xFFFFFFFF : 0x00FFFFFF;
 
         mNewColor.setColor(color);
+<<<<<<< HEAD:src/com/android/settings/notificationlight/LightSettingsDialog.java
         mHexColorInput.setText(String.format(Locale.US, format, color & mask));
+=======
         try {
             mHex.setText(ColorPickerPreference.convertToARGB(color));
         } catch (Exception e) {
         }
+>>>>>>> 90beee9... port colorpicker and add hex field to light dialog:src/com/android/settings/slim/notificationlight/LightSettingsDialog.java
 
         if (mListener != null) {
             mListener.onColorChanged(color);
@@ -211,7 +230,9 @@ public class LightSettingsDialog extends AlertDialog implements
         return mColorPicker.getColor();
     }
 
+<<<<<<< HEAD:src/com/android/settings/notificationlight/LightSettingsDialog.java
     @SuppressWarnings("unchecked")
+=======
     public void onClick(View v) {
         String text = mHex.getText().toString();
         try {
@@ -221,6 +242,7 @@ public class LightSettingsDialog extends AlertDialog implements
         }
     }
 
+>>>>>>> 90beee9... port colorpicker and add hex field to light dialog:src/com/android/settings/slim/notificationlight/LightSettingsDialog.java
     public int getPulseSpeedOn() {
         return ((Pair<String, Integer>) mPulseSpeedOn.getSelectedItem()).second;
     }
