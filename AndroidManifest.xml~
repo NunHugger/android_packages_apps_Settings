@@ -1532,10 +1532,27 @@
             android:theme="@style/CryptKeeperBlankTheme"
         />
 
+<<<<<<< HEAD
+        <!-- CyanogenMod activities Start -->
         <activity android:name=".cyanogenmod.PowerWidget" />
-	<activity android:name=".cyanogenmod.StatusBar" />
-        <activity android:name=".cyanogenmod.StatusBarClockStyle" />
-
+=======
+        <!-- extra activities start -->
+        <activity android:name=".slim.InterfaceSettings" />
+        <activity android:name=".slim.PowerWidget" />
+        <activity android:name=".slim.QuietHours" />
+        <activity android:name=".slim.PowerMenu" />
+        <activity android:name=".slim.About" />
+        <activity android:name=".slim.SoundSettings" />
+        <activity android:name=".slim.UserInterface" />
+        <activity android:name=".slim.DisplaySettings" />
+        <activity android:name=".slim.notificationlight.NotificationLightSettings" />
+        <activity android:name=".slim.notificationlight.BatteryLightSettings" />
+        <activity android:name=".slim.NotificationDrawerSettings" />
+        <activity android:name=".slim.quicksettings.QuickSettings" />
+        <activity android:name=".slim.NotificationDrawerStyle" />
+        <activity android:name=".slim.StatusBar" />
+        <activity android:name=".slim.StatusBarClockStyle" />
+>>>>>>> a95645e... [Settings] Add clock styles and Clock color picker (2/2)
 
         <activity android:name=".cyanogenmod.SystemSettings" />
         <activity android:name="Settings$SystemSettingsActivity"
