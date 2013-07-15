@@ -1636,7 +1636,6 @@
         <activity android:name=".notificationlight.BatteryLightSettings" />
 
         <activity android:name=".ApnEditor" />
-        </activity>
 
         <!-- CyanogenMod activities End -->
 
