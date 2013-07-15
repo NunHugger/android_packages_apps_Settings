@@ -40,7 +40,7 @@
                     android:targetClass="com.android.settings.deviceinfo.Status" />
         </PreferenceScreen>
 
-        <!-- CyanogenMod Updates-->
+        <!-- Deprecated CyanogenMod Updates-->
         <PreferenceScreen android:key="cm_updates"
                 android:title="@string/cmupdate_settings_title" 
                 android:summary="@string/cmupdate_settings_summary">
